@@ -1,0 +1,27 @@
+<div class="pages full-width" fxLayoutAlign="space-between start" fxLayout="row" fxLayoutGap="20px">
+  <div fxLayout="column" fxLayoutGap="15px">
+    <button mat-raised-button color="primary" (click)="onUpload()">Upload</button>
+    <img *ngIf="imageUrl" class="missing-image" [src]="imageUrl" alt="">
+    <input #upload hidden type="file">
+  </div>
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="form-input" fxLayout="column">
+    <mat-form-field appearance="outline">
+      <mat-label>Phone</mat-label>
+      <input matInput placeholder="phone">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Location</mat-label>
+      <input matInput placeholder="location">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Description</mat-label>
+      <input matInput placeholder="description">
+    </mat-form-field>
+
+    <div class="full-width" fxLayoutAlign="end end">
+      <button mat-raised-button color="primary">Check</button>
+    </div>
+  </form>
+</div>
